@@ -8,7 +8,7 @@ warnings.filterwarnings("ignore")
 
 regressor = pickle.load(open('model.pkl', 'rb'))
 
-locale.setlocale(locale.LC_ALL, '')
+locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
 
 def show_predict_page():
