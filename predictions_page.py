@@ -8,8 +8,7 @@ warnings.filterwarnings("ignore")
 
 regressor = pickle.load(open('model.pkl', 'rb'))
 
-locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
-
+# locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
 def show_predict_page():
     st.title("NBA Players Salary Prediction")
@@ -32,5 +31,5 @@ def show_predict_page():
 
         salary = regressor.predict(X)
         salary = (np.round(np.exp(salary[0]), 0)) * 10
-        salary = locale.currency(salary[0], grouping=True)
-        st.subheader('The Salary prediction for the NBA player is: {}'.format(salary))
+        # salary = locale.currency(salary[0], grouping=True)
+        st.subheader('The Salary prediction for the NBA player is: ${}'.format(salary))
