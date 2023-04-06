@@ -10,6 +10,7 @@ regressor = pickle.load(open('model.pkl', 'rb'))
 
 locale.setlocale(locale.LC_ALL, '')
 
+
 def show_predict_page():
     st.title("NBA Players Salary Prediction")
     # h3 heading for the text below.
@@ -30,6 +31,6 @@ def show_predict_page():
         # X = X.astype(float)
 
         salary = regressor.predict(X)
-        salary = (np.round(np.exp(salary[0]), 0))*10
+        salary = (np.round(np.exp(salary[0]), 0)) * 10
         salary = locale.currency(salary[0], grouping=True)
         st.subheader('The Salary prediction for the NBA player is: {}'.format(salary))
